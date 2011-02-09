@@ -15,22 +15,24 @@ Usage
 -------------
 The scripts in **fix_flash/** should all be included on the affected page and called like so:
 
-`  function fix_flash() {
-    if($.browser.msie && (parseFloat($.browser.version.substr(0,1)) < 8)){
+`  
+    function fix_flash() {
+      if($.browser.msie && (parseFloat($.browser.version.substr(0,1)) < 8)){
 	  $.getScript('http://bro1.sonymusicd2c.com/js/fix_flash_ie67.js', function(){
 	      window.fix_wmode2transparent_swf();
 	  });
-    } else if($.browser.msie && (parseFloat($.browser.version.substr(0,1)) == 8)){
+      } else if($.browser.msie && (parseFloat($.browser.version.substr(0,1)) == 8)){
 	  $.getScript('http://bro1.sonymusicd2c.com/js/fix_flash_ie8.js', function(){
 	      window.fix_wmode2transparent_swf();
 	  });
-    } else {
+      } else {
 	  $.getScript('http://bro1.sonymusicd2c.com/js/fix_flash.js', function(){
 	      window.fix_wmode2transparent_swf();
 	  });
+      }
     }
-  }
-  window.onload = fix_flash;`
+    window.onload = fix_flash;
+`
 
 **fix_youtube_iframes.js** should be called with window.onload.
 
