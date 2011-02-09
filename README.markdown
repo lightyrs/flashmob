@@ -13,9 +13,10 @@ This collection is inspired by the work of many others before me, namely:
 
 Usage
 -------------
-The scripts in **fix_flash/** should all be included on the affected page and called like so:
+**These scripts require jQuery.**
 
-`  
+The scripts in **fix_flash/** should all be included on the affected page and called like so:
+ 
     function fix_flash() {
       if($.browser.msie && (parseFloat($.browser.version.substr(0,1)) < 8)){
 	  $.getScript('http://bro1.sonymusicd2c.com/js/fix_flash_ie67.js', function(){
@@ -32,8 +33,5 @@ The scripts in **fix_flash/** should all be included on the affected page and ca
       }
     }
     window.onload = fix_flash;
-`
 
 **fix_youtube_iframes.js** should be called with window.onload.
-
-**These scripts require jQuery.**
