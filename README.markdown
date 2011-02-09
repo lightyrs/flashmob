@@ -34,4 +34,4 @@ The scripts in **fix_flash/** should all be included on the affected page and ca
     }
     window.onload = fix_flash;
 
-**fix_youtube_iframes.js** should be called with window.onload.
+**fix_youtube_iframes.js** should be called within a window.onload statement.
