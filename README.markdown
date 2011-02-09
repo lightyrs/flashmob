@@ -15,6 +15,8 @@ Usage
 -------------
 **These scripts require jQuery.**
 
+**fix_youtube_iframes.js** should be called within a window.onload statement.
+
 The scripts in **fix_flash/** should all be included on the affected page and called like so:
  
     function fix_flash() {
@@ -33,6 +35,3 @@ The scripts in **fix_flash/** should all be included on the affected page and ca
       }
     }
     window.onload = fix_flash;
-
-   return
-**fix_youtube_iframes.js** should be called within a window.onload statement.
