@@ -1,4 +1,4 @@
-re-flash
+flashmob
 =============
 re-flash is a collection of 'flash-fixing' javascript files that can be used in various situations to force a given wmode on arbitrary flash files that you may or may not control.  It's intent is to prevent flash from appearing above elements with higher priority.
 
