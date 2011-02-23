@@ -21,15 +21,15 @@ The scripts in **fix_flash/** should all be included on the affected page and ca
  
     function fix_flash() {
       if($.browser.msie && (parseFloat($.browser.version.substr(0,1)) < 8)){
-	    $.getScript('http://bro1.sonymusicd2c.com/js/fix_flash_ie67.js', function(){
+	    $.getScript('fix_flash_ie67.js', function(){
 	        window.fix_wmode2transparent_swf();
 	    });
       } else if($.browser.msie && (parseFloat($.browser.version.substr(0,1)) == 8)){
-	    $.getScript('http://bro1.sonymusicd2c.com/js/fix_flash_ie8.js', function(){
+	    $.getScript('fix_flash_ie8.js', function(){
 	        window.fix_wmode2transparent_swf();
 	    });
       } else {
-	    $.getScript('http://bro1.sonymusicd2c.com/js/fix_flash.js', function(){
+	    $.getScript('fix_flash.js', function(){
 	        window.fix_wmode2transparent_swf();
 	    });
       }
