@@ -1,30 +1,13 @@
 window.fix_wmode2transparent_swf = function () {
   
-  // loop through every embed tag on the site
-  var embeds = $("embed:visible").not(".sIFR-flash");
-  for(i=0; i<embeds.length; i++)  {
-      embed = embeds[i];
-      var new_embed;
-      // everything but Firefox & Konqueror
-      if(embed.outerHTML) {
-          var html = embed.outerHTML;
-          // replace an existing wmode parameter
-          if(html.match(/wmode\s*=\s*('|")[a-zA-Z]+('|")/i))
-              new_embed = html.replace(/wmode\s*=\s*('|")window('|")/i,"wmode='transparent'");
-          // add a new wmode parameter
-          else 
-              new_embed = html.replace(/<embed\s/i,"<embed wmode='transparent' ");
-          // replace the old embed object with the fixed version
-          embed.insertAdjacentHTML('beforeBegin',new_embed);
-          embed.parentNode.removeChild(embed);
-      } else {
-          // cloneNode is buggy in some versions of Safari & Opera, but works fine in FF
-          new_embed = embed.cloneNode(true);
-          if(!new_embed.getAttribute('wmode') || new_embed.getAttribute('wmode').toLowerCase()=='window' || new_embed.getAttribute('wmode').toLowerCase()=='direct')
-              new_embed.setAttribute('wmode','transparent');
-          embed.parentNode.replaceChild(new_embed,embed);
-      }
-  }
+	jQuery("embed:visible").not(".sIFR-flash").each(function(i) {
+		var elClone = this.cloneNode(true);
+		if (jQuery(elClone).attr("wmode") == null || jQuery(elClone).attr("wmode") == "window" || jQuery(elClone).attr("wmode") == "direct") {
+		  jQuery(elClone).attr("wmode", "transparent");  
+		}
+		jQuery(this).before(elClone);
+		jQuery(this).remove();
+	});
   // loop through every object tag on the site
   var objects = $("object:visible").not("#HeadlessAdManager");
   for(i=0; i<objects.length; i++) {
