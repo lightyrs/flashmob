@@ -5,5 +5,5 @@ jQuery('iframe[src*="youtube"]').each(function(){
   } else {
     var new_url = jQuery(this).attr("src") + "&wmode=Opaque"   
   }
-  jQuery(this).attr("src", new_url);
+  jQuery(this).attr('src', new_url);
 });
